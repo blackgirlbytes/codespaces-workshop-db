@@ -1,0 +1,25 @@
+{
+  "name": "codespaces-workshop-db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackgirlbytes/codespaces-workshop-db.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blackgirlbytes/codespaces-workshop-db/issues"
+  },
+  "homepage": "https://github.com/blackgirlbytes/codespaces-workshop-db#readme",
+  "dependencies": {
+    "docker": "^1.0.0",
+    "pg": "^8.7.3"
+  }
+}

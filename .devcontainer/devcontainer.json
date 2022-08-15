@@ -6,14 +6,43 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspace",
+	"postCreateCommand": ["npm install", "npm run db:create"],
+	"forwardPorts": [3000, 5432],
 
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
+			"settings": {
+				"terminal.integrated.shell.linux#": "/bin/zsh",
+				"sqltools.connections": [
+				{
+					"name": "Container database",
+					"driver": "PostgreSQL",
+					"previewLimit": 50,
+					"server": "localhost",
+					"port": 5432,
+					"database": "postgres",
+					"username": "postgres",
+					"password": "postgres"
+				}
+				],
+				"files.eol": "\n",
+				"files.insertFinalNewline": true,
+				"files.trimFinalNewlines": true,
+				"files.trimTrailingWhitespace": true,
+				"editor.formatOnSave": true,
+				"editor.codeActionsOnSave": {
+				"source.organizeImports": true
+				}
+ 			 },
 			"extensions": [
-				"dbaeumer.vscode-eslint"
+				"dbaeumer.vscode-eslint",
+				"mtxr.sqltools",
+				"mtxr.sqltools-driver-pg",
+				"wix.vscode-import-cost",
+				"esbenp.prettier-vscode"
 			]
 		}
 	},
