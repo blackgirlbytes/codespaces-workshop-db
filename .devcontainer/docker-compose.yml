@@ -41,3 +41,19 @@ services:
 
 volumes:
   postgres-data:
+
+  myapp:
+    container_name: myapp
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: "no"
+    depends_on:
+      - db
+    networks:
+      - dock-db-test
+
+networks:
+  dock-db-test:
+    external: false
+    name: dock-db-test
